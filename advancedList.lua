@@ -31,6 +31,7 @@ vector.mt.__eq = function (v1,v2)
     return v1.x==v2.x and v1.y==v2.y
 end
 
+vector.mt.__metatable = "Private"
 
 v1=vector.new()
 v1.x = 10
@@ -43,3 +44,6 @@ v2.y = 10
 v3 = v1 + v2
 print(v3.x,v3.y)
 print(v1==v2)
+--setmetatable(v3,nill) to delete meta table
+--vector.mt.__index = vector
+--__div , __mul, __sub
